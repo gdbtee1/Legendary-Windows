@@ -346,14 +346,23 @@
 </footer>
 
 
-<script>
-const hamburger = document.getElementById('hamburger');
-const navMobile = document.getElementById('nav-mobile');
+<!-- JS for Hamburger -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('nav-mobile');
 
-hamburger.addEventListener('click', () => {
-navMobile.style.display =
-navMobile.style.display === 'flex' ? 'none' : 'flex';
-});
+    hamburger.addEventListener('click', () => {
+      navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Close menu when link is clicked
+    document.querySelectorAll('.nav-links-mobile a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMobile.style.display = 'none';
+      });
+    });
+
+
 </script>
 
 </body>
