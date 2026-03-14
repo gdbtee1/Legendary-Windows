@@ -1148,3 +1148,16 @@ font-size:26px;
 }
 
 }
+@media (max-width:768px){
+
+#video-box{
+width:100%;
+padding:10px;
+}
+
+#myPlayer{
+width:100%;
+height:auto;
+}
+
+}
