@@ -255,10 +255,6 @@ src="https://maps.google.com/maps?q=livonia%20michigan&t=&z=12&ie=UTF8&iwloc=&ou
 Legendary Windows proudly provides professional window installation and
 distribution services throughout Livonia and nearby communities.
 </p>
-
-</section>
-
-
 <!-- FAQ SECTION -->
 <section class="contact-faq">
 
@@ -301,6 +297,14 @@ distribution services throughout Livonia and nearby communities.
 <footer class="footer">
 <p>© 2026 Legendary Windows. All Rights Reserved.</p>
 </footer>
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMobile = document.getElementById("nav-mobile");
 
+hamburger.addEventListener("click", () => {
+  navMobile.classList.toggle("active");
+  hamburger.classList.toggle("open");
+});
+</script>
 </body>
 </html>

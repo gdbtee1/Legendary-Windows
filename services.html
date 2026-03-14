@@ -345,6 +345,14 @@ weather protection.
 <a href="contact.html" class="cta-btn">Request a Quote</a>
 
 </section>
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMobile = document.getElementById("nav-mobile");
 
+hamburger.addEventListener("click", () => {
+  navMobile.classList.toggle("active");
+  hamburger.classList.toggle("open");
+});
+</script>
 </body>
 </html>
