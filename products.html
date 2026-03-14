@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      /* Reset & Base */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; }
+      a { text-decoration: none; color: inherit; }
+
+      /* Navbar */
+      header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+      }
+
+      /* Logo */
+      .logo img { height: 50px; object-fit: contain; transition: transform 0.3s; }
+      .logo img:hover { transform: scale(1.05); }
+
+      /* Nav links centered */
+      .nav-links-wrapper { flex: 1; display: flex; justify-content: center; }
+      .nav-links { display: flex; gap: 2rem; }
+      .nav-links a {
+        font-weight: 500;
+        color: #333;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-links a::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 0;
+        background: #007BFF;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        transition: width 0.3s;
+      }
+      .nav-links a:hover::after { width: 100%; }
+      .nav-links a:hover { color: #007BFF; }
+
+      /* Call-to-action button */
+      .cta-button {
+        background: #007BFF;
+        color: #fff;
+        padding: 0.7rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+      .cta-button:hover { background: #0056b3; }
+
+      /* Hamburger Menu */
+      .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 25px; height: 20px; cursor: pointer; }
+      .hamburger span { display: block; height: 3px; background: #007BFF; border-radius: 2px; transition: all 0.3s; }
+
+      /* Hamburger animation */
+      .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+      /* Mobile Nav */
+      .nav-links-mobile {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 80px;
+        right: 2rem;
+        background: #fff;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      }
+      .nav-links-mobile.active { display: flex; }
+      .nav-links-mobile .mobile-cta {
+        background: #007BFF;
+        color: #fff;
+        padding: 0.7rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 600;
+        margin-top: 1rem;
+        text-align: center;
+      }
+      .nav-links-mobile .mobile-cta:hover { background: #0056b3; }
+
+      /* Hero Section */
+      .hero { display: flex; align-items: center; justify-content: center; height: 80vh; background: #f5f5f5; text-align: center; padding: 0 2rem; }
+      .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+      .hero p { font-size: 1.2rem; max-width: 600px; }
+
+      /* Responsive Queries */
+      @media (max-width: 1024px) { .nav-links { gap: 1.5rem; } }
+      @media (max-width: 768px) {
+        .nav-links-wrapper { display: none; }
+        .cta-button { display: none; }
+        .hamburger { display: flex; }
+      }
+      @media (max-width: 480px) {
+        .hero h1 { font-size: 2rem; }
+        .hero p { font-size: 1rem; }
+      }
+    </style>
+</head>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img id="navlogo" src="Document.png" alt="Logo">
+      </a>
+
+      <div class="nav-links-wrapper">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <a href="contact.html" class="cta-button">Get Started</a>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="nav-links-mobile" id="nav-mobile">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="mobile-cta">Get Started</a>
+      </div>
+    </nav>
+  </header>
+        <section id="products">
+
+    <div class="products-header">
+        <h2>Our Products</h2>
+        <p>Premium window and door systems engineered for durability, efficiency, and modern design.</p>
+           <a href="details.html" class="explore-button">Explore Details</a>
+    </div>
+
+    <div class="products-grid">
+
+        <div class="product-card reveal">
+            <div class="product-image">
+                <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=1009,fit=crop/AzGebk31jMCGzQ81/aluminum-tilt-turn-windows-Aq2qQVXMWwcXagoy.jpeg" alt="Tilt and Turn Windows">
+            </div>
+            <div class="product-info">
+                <h3>Tilt & Turn Windows</h3>
+                <p>Advanced European-style window systems offering ventilation and security.</p>
+                   <a href="details.html" class="explore-button">Explore Details</a>
+            </div>
+        </div>
+
+        <div class="product-card reveal">
+            <div class="product-image">
+                <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=733,fit=crop/AzGebk31jMCGzQ81/curtain-wall-mjEqxV40VRCL2ewe.webp" alt="Curtain Wall Systems">
+            </div>
+            <div class="product-info">
+                <h3>Curtain Wall Systems</h3>
+                <p>Modern architectural glass systems designed for commercial and luxury homes.</p>
+                   <a href="details.html" class="explore-button">Explore Details</a>
+            </div>
+        </div>
+
+        <div class="product-card reveal">
+            <div class="product-image">
+                <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=733,fit=crop/AzGebk31jMCGzQ81/generated/generated-Y4Lx2MelPWfoDvVN.png" alt="Smart Glass">
+            </div>
+            <div class="product-info">
+                <h3>Smart Glass</h3>
+                <p>Innovative glass technology that changes transparency instantly.</p>
+                   <a href="details.html" class="explore-button">Explore Details</a>
+            </div>
+        </div>
+
+        <div class="product-card reveal">
+            <div class="product-image">
+                <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=1003,fit=crop/AzGebk31jMCGzQ81/lift-slide-A85El0rLRwcKagJP.jpg" alt="Lift and Slide Doors">
+            </div>
+            <div class="product-info">
+                <h3>Lift & Slide Doors</h3>
+                <p>Large glass door systems providing seamless indoor and outdoor transitions.</p>
+                   <a href="details.html" class="explore-button">Explore Details</a>
+            </div>
+        </div>
+
+        <div class="product-card reveal">
+            <div class="product-image">
+                <img src="data:image/jpeg;base64,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" alt="Bifold Doors">
+            </div>
+            <div class="product-info">
+                <h3>Bifold Doors</h3>
+                <p>Elegant folding door systems maximizing natural light and open space.</p>
+                   <a href="details.html" class="explore-button">Explore Details</a>
+            </div>
+        </div>
+
+        <div class="product-card reveal">
+            <div class="product-image">
+                <img src="images/product6.jpg" alt="Entry Doors">
+            </div>
+            <div class="product-info">
+                <h3>Modern Entry Doors</h3>
+                <p>High-end aluminum and glass entry doors built for security and design.</p>
+                   <a href="details.html" class="explore-button">Explore Details</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section id="modern-windows-breakout">
+
+  <div class="breakout-header">
+    <h2>Modern Window Projects</h2>
+  </div>
+
+  <div class="breakout-gallery">
+
+    <div class="breakout-card">
+      <div class="window-frame">
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=2800,h=1216,fit=crop/AzGebk31jMCGzQ81/generated/generated-A85El1OLBbT31x3M.png" alt="Project 1">
+      </div>
+    </div>
+
+    <div class="breakout-card">
+      <div class="window-frame">
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=1106,fit=crop/AzGebk31jMCGzQ81/generated/generated-mePbX6RyggSE4w7w.png" alt="Project 2">
+      </div>
+    </div>
+
+    <div class="breakout-card">
+      <div class="window-frame">
+        <img id ="window3"src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,fit=crop/AzGebk31jMCGzQ81/lift-and-slide-d957PVrjL3tErx0n.jpg" alt="Project 3">
+      </div>
+    </div>
+
+    <div class="breakout-card">
+      <div class="window-frame">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUA_jSpUUuqrcT6Jn-JFaW0Evq0FZJESoWlg&s" alt="Project 4">
+      </div>
+    </div>
+  </div>
+
+</section>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f8f8f8;
+    color: #222;
+}
+
+.details-header {
+    padding: 30px 5%;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.explore-products-btn {
+    padding: 12px 28px;
+    background-color: #222;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.explore-products-btn:hover {
+    background-color: #f05a28;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Product Section */
+.product-detail {
+    padding: 80px 5%;
+    max-width: 1400px;
+    margin: 0 auto 100px auto;
+    text-align: center;
+}
+
+.product-detail h2 {
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.product-hero {
+    position: relative;
+    perspective: 1000px; /* 3D effect */
+    display: inline-block;
+    max-width: 100%;
+}
+
+.product-hero img {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* 3D rotation effect on hover */
+.product-hero:hover img {
+    transform: rotateY(10deg) rotateX(3deg) scale(1.02);
+}
+
+/* Dimension Circles */
+.dimension-circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(240, 90, 40, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dimension-circle:hover {
+    transform: scale(1.5);
+}
+
+.dimension-circle::after {
+    content: attr(data-dim);
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    color: #fff;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.dimension-circle:hover::after {
+    opacity: 1;
+}

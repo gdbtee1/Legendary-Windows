@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      /* Reset & Base */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; }
+      a { text-decoration: none; color: inherit; }
+
+      /* Navbar */
+      header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+      }
+
+      /* Logo */
+      .logo img { height: 50px; object-fit: contain; transition: transform 0.3s; }
+      .logo img:hover { transform: scale(1.05); }
+
+      /* Nav links centered */
+      .nav-links-wrapper { flex: 1; display: flex; justify-content: center; }
+      .nav-links { display: flex; gap: 2rem; }
+      .nav-links a {
+        font-weight: 500;
+        color: #333;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-links a::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 0;
+        background: #007BFF;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        transition: width 0.3s;
+      }
+      .nav-links a:hover::after { width: 100%; }
+      .nav-links a:hover { color: #007BFF; }
+
+      /* Call-to-action button */
+      .cta-button {
+        background: #007BFF;
+        color: #fff;
+        padding: 0.7rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+      .cta-button:hover { background: #0056b3; }
+
+      /* Hamburger Menu */
+      .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 25px; height: 20px; cursor: pointer; }
+      .hamburger span { display: block; height: 3px; background: #007BFF; border-radius: 2px; transition: all 0.3s; }
+
+      /* Hamburger animation */
+      .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+      /* Mobile Nav */
+      .nav-links-mobile {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 80px;
+        right: 2rem;
+        background: #fff;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      }
+      .nav-links-mobile.active { display: flex; }
+      .nav-links-mobile .mobile-cta {
+        background: #007BFF;
+        color: #fff;
+        padding: 0.7rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 600;
+        margin-top: 1rem;
+        text-align: center;
+      }
+      .nav-links-mobile .mobile-cta:hover { background: #0056b3; }
+
+      /* Hero Section */
+      .hero { display: flex; align-items: center; justify-content: center; height: 80vh; background: #f5f5f5; text-align: center; padding: 0 2rem; }
+      .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+      .hero p { font-size: 1.2rem; max-width: 600px; }
+
+      /* Responsive Queries */
+      @media (max-width: 1024px) { .nav-links { gap: 1.5rem; } }
+      @media (max-width: 768px) {
+        .nav-links-wrapper { display: none; }
+        .cta-button { display: none; }
+        .hamburger { display: flex; }
+      }
+      @media (max-width: 480px) {
+        .hero h1 { font-size: 2rem; }
+        .hero p { font-size: 1rem; }
+      }
+    </style>
+</head>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img id="navlogo" src="Document.png" alt="Logo">
+      </a>
+
+      <div class="nav-links-wrapper">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <a href="contact.html" class="cta-button">Get Started</a>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="nav-links-mobile" id="nav-mobile">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="mobile-cta">Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+<section id="services">
+  <h2>Our Services</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Service One">
+      <h3>Window Installation</h3>
+      <p>Professional installation services ensuring durability, efficiency, and perfect fit for every window.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Service Two">
+      <h3>Window Distribution</h3>
+      <p>High-quality window products distributed to contractors, builders, and homeowners.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="Service Three">
+      <h3>Custom Solutions</h3>
+      <p>Tailored window solutions designed to match your property's structure and aesthetic.</p>
+    </div>
+
+  </div>
+</section>
+</body>
+</html>
